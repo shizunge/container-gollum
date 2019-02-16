@@ -1,4 +1,4 @@
-FROM ruby:2.6-alpine3.8
+FROM ruby:2.6-alpine3.9
 RUN apk update && \
     apk add --no-cache cmake git icu-libs icu-dev make libcurl curl-dev g++ ruby ruby-dev && \
     rm -rf /var/cache/apk/* && \
