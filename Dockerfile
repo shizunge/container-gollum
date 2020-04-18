@@ -4,8 +4,15 @@ RUN apk update && \
     rm -rf /var/cache/apk/* && \
     gem install github-linguist && \
     gem install github-markdown && \
-    gem install gollum && \
-    apk del cmake make g++
+    gem install gollum
+RUN gem install commonmarker
+RUN gem install RedCloth
+RUN gem install rdoc -v 3.6.1
+RUN gem install org-ruby
+RUN gem install creole 
+RUN gem install wikicloth
+RUN gem install asciidoctor
+RUN apk del cmake make g++
 WORKDIR /wiki
 ENTRYPOINT ["gollum", "--port", "8080"]
 EXPOSE 8080
